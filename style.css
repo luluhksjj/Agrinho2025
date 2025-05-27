@@ -1,0 +1,152 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+header, nav, footer {
+  background-color: #e0f7fa;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #00796b;
+}
+
+main {
+  padding: 2em;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+/* Tema escuro */
+body.escuro {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.escuro header,
+body.escuro nav,
+body.escuro footer {
+  background-color: #1e1e1e;
+}
+
+body.escuro nav a {
+  color: #a9d6e5;
+}
+
+body.escuro button {
+  background-color: #6c757d;
+}
+
+body {
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.alto-contraste {
+  background-color: black;
+  color: yellow;
+}
+
+.alto-contraste a,
+.alto-contraste button {
+  color: yellow;
+  background-color: black;
+  border: 2px solid yellow;
+}
+
+.botoes-acessibilidade {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+
+/* Estilos para telas até 600px (celulares) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* fonte um pouco menor */
+    padding: 0 10px;
+  }
+
+  header, nav, footer {
+    padding: 1em 0.5em;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+  }
+
+  .botoes-acessibilidade {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .botoes-acessibilidade button {
+    flex: 1 1 40%;
+    max-width: 140px;
+    font-size: 0.9em;
+    padding: 0.5em;
+  }
+
+  main {
+    padding: 1em 0.5em;
+  }
+
+  section {
+    margin-bottom: 1.5em;
+  }
+
+  iframe {
+    width: 100% !important;  /* iframe do mapa fica 100% da largura */
+    height: 300px !important; /* altura reduzida para celular */
+  }
+
+  #map {
+    height: 300px !important;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

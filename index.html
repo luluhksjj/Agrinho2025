@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melhorias no Centro de Curitiba</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header role="banner">
+    <h1 id="titulo-principal">Festejando a Conexão Campo-Cidade</h1>
+    <p id="descricao-principal">Propostas para transformar o centro de Curitiba...</p>
+    <div class="botoes-acessibilidade">
+      <button id="toggle-tema" aria-label="Alternar tema claro/escuro">Tema</button>
+      <button id="toggle-idioma" aria-label="Switch language">EN/PT</button>
+      <button id="contraste" aria-label="Ativar alto contraste">Alto Contraste</button>
+      <button id="aumentarFonte" aria-label="Aumentar tamanho da fonte">A+</button>
+      <button id="diminuirFonte" aria-label="Diminuir tamanho da fonte">A-</button>
+    </div>
+  </header>
+
+
+
+
+  <header>
+    <h1>Festejando a Conexão Campo-Cidade</h1>
+    <p>Propostas para transformar o centro de Curitiba com base na integração entre áreas urbanas e rurais.</p>
+  </header>
+
+  <nav>
+    <a href="#feiras">Feiras do Campo</a>
+    <a href="#verde">Mais Áreas Verdes</a>
+  </nav>
+
+  <main>
+    <section id="feiras">
+      <h2>Feiras do Campo no Centro</h2>
+      <p>Proposta de feiras semanais com produtores locais no centro histórico.</p>
+      <img src="imagens/00156003.webp" alt="Feira com produtos rurais" />
+      <h6>Feira de Natal de Curitiba vai até dia 23 de dezembro. — Foto: Jaelson Lucas/SMCS</h6>
+    </section>
+
+    <section id="verde">
+      <h2>Criação de Parques Urbanos</h2>
+      <p>Espaços verdes conectando a cidade ao campo: ar puro e convívio social.</p>
+      <img src="imagens/assets_task_01jw7ejwegebcrk2kvhg3kwg1c_1748301944_img_2.webp" alt="Parque urbano com árvores" />
+      <h6>copyright chat gpt IMG</h6>
+    </section>
+
+    <section id="acesso">
+      <h2>Acessibilidade Urbana</h2>
+      <p>Calçadas planas, rampas, sinalização e espaços com alto contraste para inclusão.</p>
+      <img src="imagens/piso-tatil.jpeg.webp" alt="Piso">
+      <h6>Fonte: Projeto Batente e ELO </h6>
+    </section>
+
+    <script>
+      function initMap() {
+        const centroCuritiba = { lat: -25.4284, lng: -49.2733 };
+
+        const locaisMelhorias = [
+          { lat: -25.4295, lng: -49.2719, titulo: "Praça Tiradentes" },
+          { lat: -25.4307, lng: -49.2742, titulo: "Rua XV de Novembro" },
+          { lat: -25.4275, lng: -49.2693, titulo: "Praça Osório" },
+          { lat: -25.4310, lng: -49.2687, titulo: "Cemitério Municipal" }
+        ];
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: centroCuritiba,
+        });
+
+        locaisMelhorias.forEach((local) => {
+          new google.maps.Marker({
+            position: { lat: local.lat, lng: local.lng },
+            map: map,
+            title: local.titulo,
+            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+          });
+        });
+      }
+    </script>
+
+    <h2>Mapa com Pontos de Melhoria no Centro de Curitiba</h2>
+    <p>Veja abaixo os locais onde sugerimos melhorias urbanas, como áreas verdes, iluminação e acessibilidade.</p>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.963883476297!2d-49.27048358448574!3d-25.432255283769553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd894974cb20f5%3A0x9f7488d7cc5223f9!2sPra%C3%A7a%20Generoso%20Marques%2C%20Curitiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1685123456789!5m2!1spt-BR!2sbr"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+
+
+    <section id="contador">
+      <h2>Visitantes desta página</h2>
+      <p>Você é o visitante número: <span id="contador-visitas">0</span></p>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>Site criado por Luiza — Projeto Agrinho 2025.</p>
+    <p>Imagens autorais e de domínio público.</p>
+  </footer>
+
+  <div id="map" style="height: 500px; width: 100%;"></div>
+
+
+
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
